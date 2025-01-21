@@ -1,0 +1,18 @@
+{
+    "micropico.openOnStart": true,
+    "micropico.syncFolder": "firmware",
+    "micropico.softResetAfterUpload": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.extraPaths": [
+        "~/.micropico-stubs/included"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.stubPath": "~/.micropico-stubs/included",
+    "python.analysis.typeshedPaths": [
+        "~/.micropico-stubs/included"
+    ],
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvironment": false
+}

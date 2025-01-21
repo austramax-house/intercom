@@ -1,0 +1,11 @@
+{
+    "mqtt": {
+        "broker": "",
+        "username": "",
+        "password": ""
+    },
+    "wifi": {
+        "key": "",
+        "ssid": ""
+    }
+}
