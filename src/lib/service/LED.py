@@ -1,7 +1,7 @@
-from Service import Service
+import Service
 import machine, time
 
-class LED(Service):
+class LED(Service.Service):
     led = machine.Pin('LED', machine.Pin.OUT)
 
     

@@ -1,11 +1,12 @@
-from services import Bluetooth
-from services import Config
-from services import Filesystem
-from services import Kernel
-from services import LED
-from services import MQTT
-from services import State
-from services import WiFi
+from service.Bluetooth import Bluetooth
+from service.Config import Config
+from service.Device import Device
+from service.Filesystem import Filesystem
+from service.Kernel import Kernel
+from service.LED import LED
+from service.MQTT import MQTT
+from service.State import State
+from service.WiFi import WiFi
 
 
 class App:
@@ -24,6 +25,7 @@ class App:
         self.log('Setting up services')
         self.bluetooth = Bluetooth(self)
         self.config = Config(self)
+        self.device = Device(self)
         self.filesystem = Filesystem(self)
         self.kernel = Kernel(self)
         self.led = LED(self)

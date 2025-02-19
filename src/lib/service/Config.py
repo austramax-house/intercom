@@ -1,7 +1,7 @@
-from Service import Service
+import Service
 import json
 
-class Config(Service):
+class Config(Service.Service):
     filename = '/config.json'
     defaults = {}
     config = {}
@@ -32,11 +32,11 @@ class Config(Service):
         self.defaults = json.loads(defaults)
 
         self.log('Loading custom config')
-        if not self.app.filesystem.exists(self.filename):
+        if not self.app.filesystem.exists(f'/flash{self.filename}'):
             self.log('Creating empty custom config')
-            self.app.filesystem.write(self.filename, '{}')
+            self.app.filesystem.write(f'/flash{self.filename}', '{}')
         else:
-            config = self.app.filesystem.read(self.filename)
+            config = self.app.filesystem.read(f'/flash{self.filename}')
             self.config = json.loads(config)
 
         self.log('Loading finished')

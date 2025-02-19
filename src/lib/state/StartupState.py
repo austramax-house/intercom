@@ -24,18 +24,31 @@ class StartupState(GenericState):
             return
 
         # wifi
-        self.app.wifi.setup()
-        if not self.app.wifi.configured:
-            self.app.state.transition('ONBOARD')
-            return
+        # self.app.wifi.setup()
+        # if not self.app.wifi.configured:
+        #     self.app.state.transition('ONBOARD')
+        #     return
         
-        self.app.wifi.connect()
-        if not self.app.wifi.connected:
-            self.app.state.transition('ONBOARD')
-            return
+        # self.app.wifi.connect()
+        # if not self.app.wifi.connected:
+        #     self.app.state.transition('ONBOARD')
+        #     return
 
         # mqtt
-        pass
+        # self.app.mqtt.setup()
+        # if not self.app.mqtt.configured:
+        #     self.app.state.transition('ONBOARD')
+        #     return
+        
+        # self.app.mqtt.connect()
+        # if not self.app.mqtt.connected or not self.app.mqtt.client:
+        #     self.app.state.transition('ONBOARD')
+        #     return
+        
+        
+        # device
+        self.app.device.setup()
+        self.app.device.discover()
 
         # continue
         self.app.state.transition('IDLE')

@@ -1,4 +1,5 @@
 {
+    "micropico.autoConnect": true,
     "micropico.openOnStart": true,
     "micropico.syncFolder": "firmware",
     "micropico.softResetAfterUpload": true,
@@ -6,7 +7,11 @@
         "reportMissingModuleSource": "none"
     },
     "python.analysis.extraPaths": [
-        "~/.micropico-stubs/included"
+        "~/.micropico-stubs/included",
+        "src/lib",
+        "src/lib/objects",
+        "src/lib/services",
+        "src/lib/states"
     ],
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.stubPath": "~/.micropico-stubs/included",

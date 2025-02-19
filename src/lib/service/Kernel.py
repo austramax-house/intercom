@@ -1,6 +1,6 @@
-from Service import Service
+import Service
 
-class Kernel(Service):
+class Kernel(Service.Service):
     registry = []
 
 

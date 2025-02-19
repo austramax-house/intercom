@@ -1,15 +1,15 @@
-from Service import Service
-import App, states
+import Service
+import App, state
 
-class State(Service):
+class State(Service.Service):
     def __init__(self, app: App.App):
         self.app = app
         self.current = None
         self.states = {
-            'ERROR': states.ErrorState(app),
-            'IDLE': states.IdleState(app),
-            'ONBOARD': states.OnboardState(app),
-            'STARTUP': states.StartupState(app),
+            'ERROR': state.ErrorState(app),
+            'IDLE': state.IdleState(app),
+            'ONBOARD': state.OnboardState(app),
+            'STARTUP': state.StartupState(app),
         }
 
     def enter(self, state):
